@@ -2,8 +2,8 @@ var Backbone = require("backbone");
 
 var Hunt = Backbone.Model.extend({
   defaults: {
-    name: ''
+    name: ""
   }
 });
 
-modules.exports = Hunt;
+module.exports = Hunt;

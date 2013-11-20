@@ -1,6 +1,8 @@
-var Backbone = require("backbone"),
+var Scour = require("./scour"),
+  jquery = require("jquery"),
+  Backbone = require("backbone"),
   Router = require("./routers/router"),
-  Scour = require("./scour");
+  $ = Backbone.$ = window.$;
 
 Scour.router = new Router();
 

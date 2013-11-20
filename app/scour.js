@@ -1,3 +1,3 @@
-var Scour = {}
+var Scour = {};
 
 module.exports = Scour;
