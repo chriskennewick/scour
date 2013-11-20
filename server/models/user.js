@@ -62,7 +62,7 @@ UserSchema.pre('save', function(next) {
     return next();
   }
 
-  if (!validatePresenceOf(this.password) && authTypes.indexOf(this.provider) === -1) {
+  if (!validatePresenceOf(this.password)) {
     next(new Error('Invalid password'));
   } else {
     next();

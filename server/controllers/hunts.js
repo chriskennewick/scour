@@ -13,7 +13,7 @@ exports.hunt = function(req, res, next, id) {
       return next(err);
     }
     if (!hunt) {
-      return next(new Error('Failed to get'))
+      return next(new Error('Failed to get'));
     }
   });
 };

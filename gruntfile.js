@@ -24,8 +24,17 @@ module.exports = function(grunt) {
 
     clean: ["bower_components", "node_modules"],
 
+    concurrent: {
+      dev: {
+        options: {
+          logConcurrentOutput: true
+        },
+        tasks: ['watch', 'nodemon:dev']
+      }
+    },
+
     jshint: {
-      files: ["gruntfile.js", "app/**/*.js"],
+      files: ["gruntfile.js", "app/**/*.js", "server/app.js"],
       options: {
         "curly": true,
         "eqeqeq": true,
@@ -46,19 +55,39 @@ module.exports = function(grunt) {
           "jQuery": true,
           "EventEmitter": true,
           "Backbone": true
+        }
+      }
+    },
 
+    nodemon: {
+      dev: {
+        options: {
+          file: 'server/app.js',
+          watchedFolders: ['server'],
+          watchedExtensions: ['js', 'json'],
+          nodeArgs: ['--debug']
         }
       }
     },
 
     watch: {
-      files: ["<%= jshint.files %>"],
-      tasks: "default"
+      options: {
+        livereload: true
+      },
+      app: {
+        files: ["app/**/*.js"],
+        tasks: ["jshint", "browserify"]
+      },
+      server: {
+        files: ["server/app.js"],
+        tasks: ["jshint"]
+      }
     }
 
   });
 
   grunt.registerTask("default", ["jshint", "bower_install", "browserify"]);
+  grunt.registerTask("dev", ["default", "concurrent:dev"]);
   grunt.registerTask("release", []);
   grunt.registerTask("test", []);
 

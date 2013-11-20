@@ -7,5 +7,6 @@ var Scour = require("./scour"),
 Scour.router = new Router();
 
 Backbone.history.start({
+  pushState: true,
   root: "/"
 });

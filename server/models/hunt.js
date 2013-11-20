@@ -59,7 +59,7 @@ var HuntSchema = new Schema({
  * Validations
  */
 HuntSchema.path('name').validate(function(name) {
-  return title.length;
+  return name.length;
 }, 'Name cannot be blank');
 
 /**
