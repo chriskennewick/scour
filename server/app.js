@@ -28,13 +28,10 @@ if ("development" === app.get("env")) {
 }
 
 //routes
-app.get("/hello", function(req, res) {
-  console.log("hello");
-  res.send("hello");
-});
-//require("./route/user")(app);
-//require("./route/hunt")(app);
-//require("./route/company")(app);
+require("./routes/api")(app);
+require("./routes/user")(app);
+require("./routes/hunt")(app);
+require("./routes/company")(app);
 
 http.createServer(app).listen(app.get('port'), function() {
   console.log('Express server listening on port ' + app.get('port'));

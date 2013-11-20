@@ -13,11 +13,36 @@ module.exports = function(grunt) {
 
     browserify: {
       dist: {
-        files: {
-          "public/js/bundle.js": ["app/main.js"]
-        },
+        src: ["app/main.js"],
+        dest: "public/js/bundle.js",
         options: {
-          transform: ["debowerify"]
+          transform : ["debowerify"],
+          shim: {
+            jquery: {
+              path: 'bower_components/jquery/jquery.js',
+              exports: '$'
+            },
+            underscore: {
+              path: 'bower_components/underscore/underscore.js',
+              exports: '_'
+            },
+            backbone: {
+              path: 'bower_components/backbone/backbone.js',
+              exports: 'Backbone',
+              depends: {
+                underscore: 'underscore'
+              }
+            },
+            'backbone.marionette': {
+              path: 'bower_components/backbone.marionette/lib/backbone.marionette.js',
+              exports: 'Marionette',
+              depends: {
+                jquery: '$',
+                backbone: 'Backbone',
+                underscore: '_'
+              }
+            }
+          }
         }
       }
     },

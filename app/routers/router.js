@@ -3,14 +3,14 @@ var Backbone = require("backbone");
 var Router = Backbone.Router.extend({
   routes: {
     "": "index",
-    "hunts": "hunts"
+    "hunts": "showHunts"
   },
 
   index: function() {
     console.log("INDEX WAS HIT");
   },
 
-  hunts: function(){
+  showHunts: function(){
     console.log("HUNTS WAS HIT");
   }
 });
