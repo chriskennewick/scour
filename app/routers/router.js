@@ -1,4 +1,6 @@
-var Backbone = require("backbone"),
+var $ = require("jquery"),
+    Backbone = require("backbone"),
+    Marionette = require("backbone.marionette"),
     Controller = require("../controllers/controller.js");
 
 var Router = Backbone.Marionette.AppRouter.extend({

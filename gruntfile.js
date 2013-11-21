@@ -49,12 +49,28 @@ module.exports = function(grunt) {
 
     clean: ["bower_components", "node_modules"],
 
+    concat : {
+      css : {
+        src: ["bower_components/bootstrap/dist/css/bootstrap.css","app/assets/stylesheets/style.css"],
+        dest: "public/css/scour.css"
+      }
+    },
+
     concurrent: {
       dev: {
         options: {
           logConcurrentOutput: true
         },
         tasks: ['watch', 'nodemon:dev']
+      }
+    },
+
+    copy : {
+      main: {
+        expand: true,
+        flatten: true,
+        src: "app/assets/images/*",
+        dest: "public/images/"
       }
     },
 
@@ -75,6 +91,7 @@ module.exports = function(grunt) {
         "newcap": false,
         "node": true,
         "globals": {
+          "Scour": true,
           "console": true,
           "$": true,
           "jQuery": true,
@@ -111,7 +128,7 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.registerTask("default", ["jshint", "bower_install", "browserify"]);
+  grunt.registerTask("default", ["jshint", "bower_install", "browserify", "concat"]);
   grunt.registerTask("dev", ["default", "concurrent:dev"]);
   grunt.registerTask("release", []);
   grunt.registerTask("test", []);

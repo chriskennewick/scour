@@ -13,11 +13,11 @@ body{
 }
 
 #footer { 
-  padding-top:100px;
+  padding-top: 60px;
 }
 
 #logo{
-  background : url(../images/scour-logo.svg) no-repeat;
+  background : url(/images/scour-logo.svg) no-repeat;
   float: left;
   display: inline;
   height: 40px;
@@ -44,7 +44,7 @@ body{
   left: 0px;
   -webkit-background-size: auto 100%;
   background-repeat: no-repeat;
-  background-image: url(../images/splash-gold.jpg);
+  background-image: url(/images/splash-gold.jpg);
   background-color:#000000;
 }
 
@@ -53,6 +53,26 @@ body{
   padding-left:100px;
   color:#ededed;
 }
+
+#welcome-splash-wrapper {
+  position: relative;
+  height: 330px;
+  overflow: hidden;
+}
+
+#welcome-splash {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-position: center top;
+  top: 0px;
+  left: 0px;
+  -webkit-background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-image: url(/images/splash-binoculars.jpg);
+  background-color:#000000;
+}
+
 
 #splash-fill {
 

@@ -1,5 +1,16 @@
-var Marionette = require("backbone.marionette");
 
-var Scour;
+module.exports = function($,Backbone,Marionette,Router){
+  var scour = new Backbone.Marionette.Application();
 
-module.exports = Scour;
+  scour.addRegions({
+    content: "#content"
+  });
+
+  scour.on("start", function() {
+    Backbone.history.start();
+  });
+
+  scour.router = new Router();
+
+  return scour;
+};
