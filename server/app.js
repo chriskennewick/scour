@@ -20,7 +20,7 @@ app.set("port", process.env.PORT || 3000);
 
 app.use(express.logger("dev"));
 app.use(express.static(path.join(__dirname, "../public")));
-  
+app.use(express.static(path.join(__dirname, "../static_mockups/")));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 restify.serve(app, Hunt);
