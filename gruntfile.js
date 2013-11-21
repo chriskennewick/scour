@@ -16,7 +16,7 @@ module.exports = function(grunt) {
         src: ["app/main.js"],
         dest: "public/js/bundle.js",
         options: {
-          transform : ["debowerify"],
+          transform : ["debowerify","hbsfy"],
           shim: {
             jquery: {
               path: 'bower_components/jquery/jquery.js',

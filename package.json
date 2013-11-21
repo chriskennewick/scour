@@ -17,7 +17,9 @@
     "bower": "~1.2.7",
     "browserify": "~2.35.4",
     "debowerify": "~0.3.0",
-    "express-restify-mongoose": "~0.5.4"
+    "express-restify-mongoose": "~0.5.4",
+    "handlebars": "~1.0.12",
+    "hbsfy": "~1.0.0"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
