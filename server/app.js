@@ -7,8 +7,13 @@ var express = require("express");
 //var user = require('./routes/user');
 var http = require("http");
 var path = require("path");
+var mongoose = require("mongoose");
+var restify = require("express-restify-mongoose");
+var Hunt = require("./models/hunt.js");
 
 var app = express();
+
+mongoose.connect("mongodb://localhost/scour");
 
 // all environments
 app.set("port", process.env.PORT || 3000);
@@ -18,7 +23,34 @@ app.use(express.static(path.join(__dirname, "../public")));
   
 app.use(express.bodyParser());
 app.use(express.methodOverride());
+restify.serve(app, Hunt);
 app.use(app.router);
+
+
+var seaHunt = new Hunt({
+  name: "Seattle Hunt",
+  date: new Date(),
+  location: {
+    city: "Seattle",
+    state: "WA",
+  },
+  sponsors: ["codefellows","scour"],
+  registration_cost: 30,
+  prizes: [{
+    prize: "codefellows tuition",
+    clues: [{
+      type: "image",
+      content: "no image"
+    }],
+    rank : 1
+  }],
+  registrants : 100,
+  registrant_limit : 120,
+  registration_start_time : new Date(),
+  status : "started"
+});
+
+seaHunt.save(function(err){});
 
 console.log(__dirname);
 
@@ -28,10 +60,10 @@ if ("development" === app.get("env")) {
 }
 
 //routes
-require("./routes/api")(app);
-require("./routes/user")(app);
-require("./routes/hunt")(app);
-require("./routes/company")(app);
+//require("./routes/api")(app);
+//require("./routes/user")(app);
+//require("./routes/hunt")(app);
+//require("./routes/company")(app);
 
 http.createServer(app).listen(app.get('port'), function() {
   console.log('Express server listening on port ' + app.get('port'));
