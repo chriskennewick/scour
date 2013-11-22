@@ -8,7 +8,6 @@ var HuntsCompositeView = Marionette.CompositeView.extend({
   template: template,
   itemView: HuntView,
   appendHtml: function(compositeView,itemView){
-    console.log("appending to view");
     compositeView.$("#hunts").append(itemView.el);
   }
 });

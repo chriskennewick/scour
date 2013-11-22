@@ -3,7 +3,8 @@ module.exports = function($,Backbone,Marionette,Router){
   var scour = new Backbone.Marionette.Application();
 
   scour.addRegions({
-    content: "#content"
+    content: "#content",
+    modal: require("./regions/modal.js")
   });
 
   scour.on("start", function() {

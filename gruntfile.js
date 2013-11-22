@@ -41,6 +41,14 @@ module.exports = function(grunt) {
                 backbone: 'Backbone',
                 underscore: '_'
               }
+            },
+            'bootstrap':{
+              path: 'bower_components/bootstrap/dist/js/bootstrap.js',
+              exports: 'bootstrap'
+            },
+            'bootstrap-modal':{
+              path: 'bower_components/bootstrap-modal/js/bootstrap-modal.js',
+              exports: 'bootstrap-modal'
             }
           }
         }

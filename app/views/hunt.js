@@ -9,11 +9,12 @@ var HuntView = Backbone.Marionette.ItemView.extend({
   className: "col-md-3",
   //
   events : {
-
+    "click img" : "showDetailedHunt"
   },
+  
   showDetailedHunt : function(){
-    var detailedHuntView = new DetailedHuntModalView();
-    //Scour.
+    var detailedHuntView = new DetailedHuntModalView({model: this.model});
+    Scour.modal.show(detailedHuntView);
   }
 });
 
