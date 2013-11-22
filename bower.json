@@ -20,6 +20,7 @@
     "parsleyjs": "~1.1.18",
     "underscore": "~1.5.2",
     "backbone": "~1.1.0",
-    "backbone.marionette": "~1.2.3"
+    "backbone.marionette": "~1.2.3",
+    "momentjs": "~2.4.0"
   }
 }
