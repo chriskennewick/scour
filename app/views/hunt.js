@@ -15,7 +15,6 @@ var HuntView = Backbone.Marionette.ItemView.extend({
   showDetailedHunt : function(){
     var detailedHuntView = new DetailedHuntModalView({model: this.model});
     Scour.modal.show(detailedHuntView);
-    console.dir(this.model);
     Scour.router.navigate("/hunts/" + this.model.get("_id"));
   }
 });

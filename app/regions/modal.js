@@ -19,7 +19,6 @@ var ModalRegion = Backbone.Marionette.Region.extend({
 
   showModal: function(view) {
     view.on("close", this.hideModal, this);
-    console.log(this.$el);
     this.$el.modal('show');
   },
 

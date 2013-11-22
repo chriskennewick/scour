@@ -9,7 +9,6 @@ var DetailedHuntModalView = Backbone.Marionette.ItemView.extend({
   },
   showHunts: function(){
     Scour.router.navigate("/hunts");
-    console.log("THIS FIRED");
   }
 
 });
