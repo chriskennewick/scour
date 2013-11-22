@@ -13,7 +13,12 @@ var Hunt = require("./models/hunt.js");
 
 var app = express();
 
-mongoose.connect("mongodb://localhost/scour");
+var connectionString = "mongodb://localhost/scour";
+if (process.env.NODE_ENV == "production") {
+  connectionString = "mongodb://heroku:cc7fe78c70e476c8d9f29cfd2f1420e9@linus.mongohq.com:10082/app19650718"
+}
+
+mongoose.connect(connectionString);
 
 // all environments
 app.set("port", process.env.PORT || 3000);
