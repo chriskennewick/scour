@@ -11,10 +11,12 @@ var HuntView = Backbone.Marionette.ItemView.extend({
   events : {
     "click img" : "showDetailedHunt"
   },
-  
+
   showDetailedHunt : function(){
     var detailedHuntView = new DetailedHuntModalView({model: this.model});
     Scour.modal.show(detailedHuntView);
+    console.dir(this.model);
+    Scour.router.navigate("/hunts/" + this.model.get("_id"));
   }
 });
 

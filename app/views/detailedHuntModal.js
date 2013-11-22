@@ -3,7 +3,15 @@ var Backbone = require("backbone"),
   template = require("../templates/detailedHuntModal.hbs");
   
 var DetailedHuntModalView = Backbone.Marionette.ItemView.extend({
-  template: template
+  template: template,
+  events : {
+    "click button.close" : "showHunts"
+  },
+  showHunts: function(){
+    Scour.router.navigate("/hunts");
+    console.log("THIS FIRED");
+  }
+
 });
 
 module.exports = DetailedHuntModalView;

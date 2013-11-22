@@ -25,6 +25,7 @@ var ModalRegion = Backbone.Marionette.Region.extend({
 
   hideModal: function() {
     this.$el.modal('hide');
+    Scour.router.navigate("/hunts");
   }
 });
 
