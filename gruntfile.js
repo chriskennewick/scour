@@ -49,7 +49,7 @@ module.exports = function(grunt) {
       }
     },
 
-    clean: ["bower_components", "node_modules"],
+    clean: ["bower_components", "node_modules","public"],
 
     concat: {
       css: {
