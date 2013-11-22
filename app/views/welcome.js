@@ -2,8 +2,8 @@ var Backbone = require("backbone"),
   Marionette = require("backbone.marionette"),
   template = require("../templates/welcome.hbs");
   
-var IndexView = Backbone.Marionette.ItemView.extend({
+var WelcomeView = Backbone.Marionette.ItemView.extend({
   template: template
 });
 
-module.exports = IndexView;
+module.exports = WelcomeView;

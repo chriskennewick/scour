@@ -128,7 +128,7 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.registerTask("default", ["jshint", "bower_install", "browserify", "concat"]);
+  grunt.registerTask("default", ["jshint", "bower_install", "browserify", "concat", "copy"]);
   grunt.registerTask("dev", ["default", "concurrent:dev"]);
   grunt.registerTask("release", []);
   grunt.registerTask("test", []);

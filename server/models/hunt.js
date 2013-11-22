@@ -21,7 +21,7 @@ var HuntSchema = new Schema({
     }],
     rank : Number
   }],
-  registrants : Array,
+  registrant_count : Number,
   registrant_limit : Number,
   registration_start_time : Date,
   status : String

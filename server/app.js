@@ -26,34 +26,6 @@ app.use(express.methodOverride());
 restify.serve(app, Hunt);
 app.use(app.router);
 
-
-var seaHunt = new Hunt({
-  name: "Seattle Hunt",
-  date: new Date(),
-  location: {
-    city: "Seattle",
-    state: "WA",
-  },
-  sponsors: ["codefellows","scour"],
-  registration_cost: 30,
-  prizes: [{
-    prize: "codefellows tuition",
-    clues: [{
-      type: "image",
-      content: "no image"
-    }],
-    rank : 1
-  }],
-  registrants : 100,
-  registrant_limit : 120,
-  registration_start_time : new Date(),
-  status : "started"
-});
-
-seaHunt.save(function(err){});
-
-console.log(__dirname);
-
 // development only
 if ("development" === app.get("env")) {
   app.use(express.errorHandler());
